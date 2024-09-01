@@ -6,6 +6,8 @@ CONFIGURACION INICIAL
   - Crear una nuevo repositorio y ligarlo a la carpeta local del reporte.
   - hacer un commit inicial para actualizar mi repositorio local
   - hacer un publish (push) para subirlo a github.com
+- desde Github.com ahora se ven los archivos completos del proyecto.
+- vamos a settings de ese repositorio y buscamos Githubpages
 
 CAMBIOS DE AHÍ EN ADELANTE
 

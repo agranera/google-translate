@@ -50,7 +50,7 @@ p {
 }
 
 .select-selected i {
-    font-size: 14px; 
+    font-size: 20px; /* Tamaño del ícono del globo */
     color: #333;
 }
 

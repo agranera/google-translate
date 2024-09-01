@@ -1,12 +1,22 @@
-// Almacena la URL original de la página
-var originalUrl = window.location.origin + window.location.pathname;
+var originalUrl;
+
+window.onload = function() {
+    // Solo inicializa originalUrl si no está definida previamente
+    if (!originalUrl) {
+        originalUrl = window.location.origin + window.location.pathname;
+    }
+};
 
 function translateLanguage(language) {
+
+
+    originalUrl = "https://agranera.github.io/google-translate/"
+
+    // Si el idioma seleccionado es inglés (o el idioma original de la página), recarga la página original
     if (language === "en-US") {
-        // Si el idioma seleccionado es inglés, recargar la página original
         window.location.href = originalUrl;
     } else {
-        // Construir la URL de Google Translate usando siempre la URL original
+        // Usa siempre la URL original para la traducción
         var translateUrl = "https://translate.google.com/translate?hl=" + language + "&sl=auto&tl=" + language + "&u=" + encodeURIComponent(originalUrl);
         window.location.href = translateUrl;
     }

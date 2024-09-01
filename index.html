@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Translate Sample</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.6/css/flag-icon.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Google Translate Sample</h1>
+    </header>
+    <p>
+        Before you launch into creating your webpage you should have your texts prepared. Make sure you explain what you
+        do well without coming across as boring. There are myriad courses that teach you how to do this but here we are
+        going to give you an easy to follow outline and several examples so that you can get inspired.
+    </p>
+    <p>
+        Use <span class="notranslate">headers</span> to make your content stand out. The word <span
+            class="notranslate">headers</span> should not be translated.
+    </p>
+
+    <div class="custom-select-container">
+        <div class="custom-select">
+            <div class="select-selected"><i class="fas fa-globe"></i></div>
+            <div class="select-items select-hide">
+                <!-- English Group -->
+                <div class="select-group">English</div>
+                <div onclick="translateLanguage('en-US')"><span class="flag-icon flag-icon-us"></span> English (United
+                    States) [en-US]</div>
+                <div onclick="translateLanguage('en-GB')"><span class="flag-icon flag-icon-gb"></span> English (United
+                    Kingdom) [en-GB]</div>
+                <div onclick="translateLanguage('en-AU')"><span class="flag-icon flag-icon-au"></span> English
+                    (Australia) [en-AU]</div>
+                <div onclick="translateLanguage('en-CA')"><span class="flag-icon flag-icon-ca"></span> English (Canada)
+                    [en-CA]</div>
+
+                <!-- Spanish Group -->
+                <div class="select-group">Español</div>
+                <div onclick="translateLanguage('es-ES')"><span class="flag-icon flag-icon-es"></span> Español (España)
+                    [es-ES]</div>
+                <div onclick="translateLanguage('es-MX')"><span class="flag-icon flag-icon-mx"></span> Español (México)
+                    [es-MX]</div>
+                <div onclick="translateLanguage('es-AR')"><span class="flag-icon flag-icon-ar"></span> Español
+                    (Argentina) [es-AR]</div>
+                <div onclick="translateLanguage('es-CO')"><span class="flag-icon flag-icon-co"></span> Español
+                    (Colombia) [es-CO]</div>
+
+                <!-- Portuguese Group -->
+                <div class="select-group">Português</div>
+                <div onclick="translateLanguage('pt-BR')"><span class="flag-icon flag-icon-br"></span> Português
+                    (Brasil) [pt-BR]</div>
+                <div onclick="translateLanguage('pt-PT')"><span class="flag-icon flag-icon-pt"></span> Português
+                    (Portugal) [pt-PT]</div>
+
+                <!-- French Group -->
+                <div class="select-group">Français</div>
+                <div onclick="translateLanguage('fr-FR')"><span class="flag-icon flag-icon-fr"></span> Français (France)
+                    [fr-FR]</div>
+                <div onclick="translateLanguage('fr-CA')"><span class="flag-icon flag-icon-ca"></span> Français (Canada)
+                    [fr-CA]</div>
+                <div onclick="translateLanguage('fr-CH')"><span class="flag-icon flag-icon-ch"></span> Français (Suisse)
+                    [fr-CH]</div>
+
+                <!-- German Group -->
+                <div class="select-group">Deutsch</div>
+                <div onclick="translateLanguage('de-DE')"><span class="flag-icon flag-icon-de"></span> Deutsch
+                    (Deutschland) [de-DE]</div>
+                <div onclick="translateLanguage('de-CH')"><span class="flag-icon flag-icon-ch"></span> Deutsch (Schweiz)
+                    [de-CH]</div>
+                <div onclick="translateLanguage('de-AT')"><span class="flag-icon flag-icon-at"></span> Deutsch
+                    (Österreich) [de-AT]</div>
+
+                <!-- Chinese Group -->
+                <div class="select-group">中文</div>
+                <div onclick="translateLanguage('zh-CN')"><span class="flag-icon flag-icon-cn"></span> 中文 (中国) [zh-CN]
+                </div>
+                <div onclick="translateLanguage('zh-TW')"><span class="flag-icon flag-icon-tw"></span> 中文 (台灣) [zh-TW]
+                </div>
+                <div onclick="translateLanguage('zh-HK')"><span class="flag-icon flag-icon-hk"></span> 中文 (香港) [zh-HK]
+                </div>
+
+                <!-- Arabic Group -->
+                <div class="select-group">العربية</div>
+                <div onclick="translateLanguage('ar')"><span class="flag-icon flag-icon-sa"></span> العربية (السعودية)
+                    [ar]</div>
+                <div onclick="translateLanguage('ar-EG')"><span class="flag-icon flag-icon-eg"></span> العربية (مصر)
+                    [ar-EG]</div>
+                <div onclick="translateLanguage('ar-MA')"><span class="flag-icon flag-icon-ma"></span> العربية (المغرب)
+                    [ar-MA]</div>
+                <div onclick="translateLanguage('ar-SY')"><span class="flag-icon flag-icon-sy"></span> العربية (سوريا)
+                    [ar-SY]</div>
+
+                <!-- Divisor -->
+                <div class="select-divider"></div>
+
+                <!-- Other Languages -->
+                <div onclick="translateLanguage('nl-NL')"><span class="flag-icon flag-icon-nl"></span> Nederlands
+                    (Nederland) [nl-NL]</div>
+                <div onclick="translateLanguage('nl-BE')"><span class="flag-icon flag-icon-be"></span> Vlaams (België)
+                    [nl-BE]</div>
+                <div onclick="translateLanguage('nb')"><span class="flag-icon flag-icon-no"></span> Norsk Bokmål (Norge)
+                    [nb]</div>
+                <div onclick="translateLanguage('nn')"><span class="flag-icon flag-icon-no"></span> Norsk Nynorsk
+                    (Norge) [nn]</div>
+                <div onclick="translateLanguage('sv-SE')"><span class="flag-icon flag-icon-se"></span> Svenska (Sverige)
+                    [sv-SE]</div>
+                <div onclick="translateLanguage('sv-FI')"><span class="flag-icon flag-icon-fi"></span> Svenska (Finland)
+                    [sv-FI]</div>
+                <div onclick="translateLanguage('hi-IN')"><span class="flag-icon flag-icon-in"></span> हिंदी (भारत)
+                    [hi-IN]</div>
+                <div onclick="translateLanguage('ur-PK')"><span class="flag-icon flag-icon-pk"></span> اردو (پاکستان)
+                    [ur-PK]</div>
+                <div onclick="translateLanguage('ru-RU')"><span class="flag-icon flag-icon-ru"></span> Русский (Россия)
+                    [ru-RU]</div>
+                <div onclick="translateLanguage('uk-UA')"><span class="flag-icon flag-icon-ua"></span> Українська
+                    (Україна) [uk-UA]</div>
+                <div onclick="translateLanguage('sr-RS')"><span class="flag-icon flag-icon-rs"></span> Српски (Србија)
+                    [sr-RS]</div>
+                <div onclick="translateLanguage('hr-HR')"><span class="flag-icon flag-icon-hr"></span> Hrvatski
+                    (Hrvatska) [hr-HR]</div>
+                <div onclick="translateLanguage('bs-BA')"><span class="flag-icon flag-icon-ba"></span> Bosanski (Bosna i
+                    Hercegovina) [bs-BA]</div>
+                <div onclick="translateLanguage('sw')"><span class="flag-icon flag-icon-tz"></span> Kiswahili (Tanzania)
+                    [sw]</div>
+                <div onclick="translateLanguage('ko')"><span class="flag-icon flag-icon-kr"></span> 한국어 (대한민국) [ko]
+                </div>
+                <div onclick="translateLanguage('ja')"><span class="flag-icon flag-icon-jp"></span> 日本語 (日本) [ja]</div>
+                <div onclick="translateLanguage('vi')"><span class="flag-icon flag-icon-vn"></span> Tiếng Việt (Việt
+                    Nam) [vi]</div>
+                <div onclick="translateLanguage('it')"><span class="flag-icon flag-icon-it"></span> Italiano (Italia)
+                    [it]</div>
+                <div onclick="translateLanguage('pl')"><span class="flag-icon flag-icon-pl"></span> Polski (Polska) [pl]
+                </div>
+                <div onclick="translateLanguage('fa')"><span class="flag-icon flag-icon-ir"></span> فارسی (ایران) [fa]
+                </div>
+                <div onclick="translateLanguage('el')"><span class="flag-icon flag-icon-gr"></span> Ελληνικά (Ελλάδα)
+                    [el]</div>
+                <div onclick="translateLanguage('he')"><span class="flag-icon flag-icon-il"></span> עברית (ישראל) [he]
+                </div>
+                <div onclick="translateLanguage('ms')"><span class="flag-icon flag-icon-my"></span> Bahasa Melayu
+                    (Malaysia) [ms]</div>
+                <div onclick="translateLanguage('ro')"><span class="flag-icon flag-icon-ro"></span> Română (România)
+                    [ro]</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

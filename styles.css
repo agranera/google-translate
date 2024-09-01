@@ -1,0 +1,115 @@
+/* Estilos básicos */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    color: #333;
+}
+
+p {
+    color: #555;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Estilos para el contenedor del selector */
+.custom-select-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+/* Estilos para el selector personalizado */
+.custom-select {
+    position: relative;
+    font-family: Arial;
+}
+
+.select-selected {
+    background-color: #eee;
+    padding: 10px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px; /* Ancho del globo */
+    height: 20px; /* Altura del globo */
+    border-radius: 50%;
+}
+
+.select-selected i {
+    font-size: 14px; 
+    color: #333;
+}
+
+.select-selected:after {
+    content: "";
+    position: absolute;
+    top: 14px;
+    right: 10px;
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    padding: 3px;
+    transform: rotate(45deg);
+    display: none;
+}
+
+.select-items {
+    position: absolute;
+    background-color: #f9f9f9;
+    width: 350px; /* Aumentar el ancho del menú */
+    border: 1px solid #ccc;
+    z-index: 99;
+    max-height: 500px; /* Aumentar la altura antes de hacer scroll */
+    overflow-y: auto;
+    display: none;
+    right: 0;
+}
+
+.select-items div {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.select-items div:hover {
+    background-color: #ddd;
+}
+
+.select-selected.select-arrow-active:after {
+    transform: rotate(-135deg);
+    top: 7px;
+    display: block;
+}
+
+/* Muestra el menú al hacer clic */
+.select-selected.select-arrow-active+.select-items {
+    display: block;
+}
+
+/* Estilos para los grupos */
+.select-group {
+    background-color: #ccc;
+    padding: 8px 10px;
+    font-weight: bold;
+    cursor: default;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Estilo para el divisor */
+.select-divider {
+    height: 1px;
+    background-color: #ddd;
+    margin: 10px 0;
+}

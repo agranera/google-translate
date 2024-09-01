@@ -1,11 +1,19 @@
 function translateLanguage(language) {
+    // Primero, recargar la página en el idioma original (sin traducción)
+    var originalUrl = window.location.origin + window.location.pathname;
+
+    // Si el idioma seleccionado es inglés (o el idioma original de la página), solo recarga la página
     if (language === "en-US") {
-        // Recargar la página en el idioma original (sin traducción)
-        window.location.href = window.location.origin + window.location.pathname;
+        window.location.href = originalUrl;
     } else {
-        // Traducir la página al idioma seleccionado
-        var translateUrl = "https://translate.google.com/translate?hl=" + language + "&sl=auto&tl=" + language + "&u=" + encodeURIComponent(window.location.href);
-        window.location.href = translateUrl;
+        // Recarga la página al estado original y luego aplica la traducción
+        window.location.href = originalUrl + '#googtrans(en|en)';
+        
+        // Espera un momento para asegurarse de que la página se recarga y luego aplica la traducción
+        setTimeout(function() {
+            var translateUrl = "https://translate.google.com/translate?hl=" + language + "&sl=auto&tl=" + language + "&u=" + encodeURIComponent(originalUrl);
+            window.location.href = translateUrl;
+        }, 500);  // Ajusta el tiempo de espera si es necesario
     }
 }
 

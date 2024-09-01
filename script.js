@@ -13,7 +13,7 @@ function translateLanguage(language) {
         setTimeout(function() {
             var translateUrl = "https://translate.google.com/translate?hl=" + language + "&sl=auto&tl=" + language + "&u=" + encodeURIComponent(originalUrl);
             window.location.href = translateUrl;
-        }, 500);  // Ajusta el tiempo de espera si es necesario
+        }, 5000);  // Ajusta el tiempo de espera si es necesario
     }
 }
 

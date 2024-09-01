@@ -1,10 +1,7 @@
 var originalUrl;
 
 window.onload = function() {
-    // Solo inicializa originalUrl si no está definida previamente
-    if (!originalUrl) {
         originalUrl = window.location.origin + window.location.pathname;
-    }
 };
 
 function translateLanguage(language) {

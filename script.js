@@ -1,31 +1,18 @@
-function translateLanguage(language) {
-    var originalUrl = window.location.origin + window.location.pathname;
+// Almacena la URL original de la página
+var originalUrl = window.location.origin + window.location.pathname;
 
-    // Si el idioma seleccionado es inglés (o el idioma original de la página), solo recarga la página
+function translateLanguage(language) {
     if (language === "en-US") {
+        // Si el idioma seleccionado es inglés, recargar la página original
         window.location.href = originalUrl;
     } else {
-        // Almacena el idioma seleccionado en el localStorage
-        localStorage.setItem('selectedLanguage', language);
-
-        // Recarga la página para volver al estado original
-        window.location.href = originalUrl;
+        // Construir la URL de Google Translate usando siempre la URL original
+        var translateUrl = "https://translate.google.com/translate?hl=" + language + "&sl=auto&tl=" + language + "&u=" + encodeURIComponent(originalUrl);
+        window.location.href = translateUrl;
     }
 }
 
-// Comprueba si hay un idioma seleccionado en el localStorage al cargar la página
-window.onload = function() {
-    var selectedLanguage = localStorage.getItem('selectedLanguage');
-    if (selectedLanguage && selectedLanguage !== 'en-US') {
-        // Después de que la página se haya recargado, aplica la traducción
-        setTimeout(function() {
-            var translateUrl = "https://translate.google.com/translate?hl=" + selectedLanguage + "&sl=auto&tl=" + selectedLanguage + "&u=" + encodeURIComponent(window.location.href);
-            window.location.href = translateUrl;
-        }, 1000);  // Ajusta el tiempo de espera si es necesario
-    }
-}
-
-// Muestra y oculta las opciones
+// Muestra y oculta las opciones del selector
 document.querySelector('.select-selected').addEventListener('click', function() {
     this.classList.toggle('select-arrow-active');
     document.querySelector('.select-items').classList.toggle('select-hide');

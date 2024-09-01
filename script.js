@@ -1,19 +1,27 @@
 function translateLanguage(language) {
-    // Primero, recargar la página en el idioma original (sin traducción)
     var originalUrl = window.location.origin + window.location.pathname;
 
     // Si el idioma seleccionado es inglés (o el idioma original de la página), solo recarga la página
     if (language === "en-US") {
         window.location.href = originalUrl;
     } else {
-        // Recarga la página al estado original y luego aplica la traducción
-        window.location.href = "https://agranera.github.io/google-translate/" //originalUrl+ '#googtrans(en|en)';
-        
-        // Espera un momento para asegurarse de que la página se recarga y luego aplica la traducción
+        // Almacena el idioma seleccionado en el localStorage
+        localStorage.setItem('selectedLanguage', language);
+
+        // Recarga la página para volver al estado original
+        window.location.href = originalUrl;
+    }
+}
+
+// Comprueba si hay un idioma seleccionado en el localStorage al cargar la página
+window.onload = function() {
+    var selectedLanguage = localStorage.getItem('selectedLanguage');
+    if (selectedLanguage && selectedLanguage !== 'en-US') {
+        // Después de que la página se haya recargado, aplica la traducción
         setTimeout(function() {
-            var translateUrl = "https://translate.google.com/translate?hl=" + language + "&sl=auto&tl=" + language + "&u=" + encodeURIComponent(originalUrl);
+            var translateUrl = "https://translate.google.com/translate?hl=" + selectedLanguage + "&sl=auto&tl=" + selectedLanguage + "&u=" + encodeURIComponent(window.location.href);
             window.location.href = translateUrl;
-        }, 5000);  // Ajusta el tiempo de espera si es necesario
+        }, 1000);  // Ajusta el tiempo de espera si es necesario
     }
 }
 

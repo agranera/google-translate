@@ -123,3 +123,11 @@ body>#google_translate_element2 {
 iframe[style*="visibility: visible"] {
     display: none !important;
 }
+
+iframe.goog-te-banner-frame {
+    display: none !important;
+}
+
+body {
+    top: 0px !important;
+}

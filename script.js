@@ -9,9 +9,6 @@ window.onload = function() {
 
 function translateLanguage(language) {
 
-
-    originalUrl = "https://agranera.github.io/google-translate/"
-
     // Si el idioma seleccionado es inglés (o el idioma original de la página), recarga la página original
     if (language === "en-US") {
         window.location.href = originalUrl;

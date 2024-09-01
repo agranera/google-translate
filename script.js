@@ -7,7 +7,7 @@ function translateLanguage(language) {
         window.location.href = originalUrl;
     } else {
         // Recarga la página al estado original y luego aplica la traducción
-        window.location.href = originalUrl + '#googtrans(en|en)';
+        window.location.href = originalUrl //+ '#googtrans(en|en)';
         
         // Espera un momento para asegurarse de que la página se recarga y luego aplica la traducción
         setTimeout(function() {
